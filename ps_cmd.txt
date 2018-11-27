@@ -1,0 +1,4 @@
+[System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest()
+[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
+([System.DirectoryServices.ActiveDirectory.Forest]::GetForest((New-Object System.DirectoryServices.ActiveDirectory.DirectoryContext(‘Forest’, $ForestRootDomain)))).GetAllTrustRelationships()
+([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships(), [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest().GlobalCatalogs
